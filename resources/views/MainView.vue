@@ -6,7 +6,7 @@
                 :key="contact.id"
                 :contactName="contact.nombre"
                 :contactLastName="contact.apellido"
-                :contactAreaCode="contact.condigo_area"
+                :contactAreaCode="contact.codigo_area"
                 :contactPhoneNumeber="contact.numero" 
             />
         </div>
@@ -17,6 +17,7 @@
 import ViewContainer from './ViewContainer.vue'
 import InputContact from '../js/components/InputContact'
 import ContactCard from '../js/components/ContactCard'
+import axios from 'axios'
 
 export default {
     name: 'MainView',
@@ -34,18 +35,22 @@ export default {
         
     },
 
-    //  methods: {
-    //     getContacts() {
-            
-    //         axios.get('localhost:8000').then();
-    
-    //     },
+     methods: {
+        getContacts() {
+            axios.get(`/api/getContacts`)
+            .then((response) => {
+                this.contacts = response.data;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        },
+    },
 
-    // created() {
-    //     this.getContacts();
-    // }
-
-   
+    created() {
+        this.getContacts();
+        console.log(this.contacts);
+    }
 }
 </script>
 

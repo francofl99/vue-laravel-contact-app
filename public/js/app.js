@@ -2026,6 +2026,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ViewContainer_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ViewContainer.vue */ "./resources/views/ViewContainer.vue");
 /* harmony import */ var _js_components_InputContact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/components/InputContact */ "./resources/js/components/InputContact.vue");
 /* harmony import */ var _js_components_ContactCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../js/components/ContactCard */ "./resources/js/components/ContactCard.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -2041,6 +2043,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 
@@ -2055,14 +2058,22 @@ __webpack_require__.r(__webpack_exports__);
     return {
       contacts: []
     };
-  } //  methods: {
-  //     getContacts() {
-  //         axios.get('localhost:8000').then();
-  //     },
-  // created() {
-  //     this.getContacts();
-  // }
+  },
+  methods: {
+    getContacts: function getContacts() {
+      var _this = this;
 
+      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("/api/getContacts").then(function (response) {
+        _this.contacts = response.data;
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  },
+  created: function created() {
+    this.getContacts();
+    console.log(this.contacts);
+  }
 });
 
 /***/ }),
@@ -38696,7 +38707,7 @@ var render = function() {
             attrs: {
               contactName: contact.nombre,
               contactLastName: contact.apellido,
-              contactAreaCode: contact.condigo_area,
+              contactAreaCode: contact.codigo_area,
               contactPhoneNumeber: contact.numero
             }
           })
