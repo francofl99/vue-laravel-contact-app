@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen font-sans">
+  <div class="h-screen w-screen font-sans">
       <nav-bar/>
         <slot/>
   </div>

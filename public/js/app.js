@@ -2043,6 +2043,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -6546,7 +6548,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card {\n  width: 30%;\n  height: 38%;\n}\n\n", ""]);
+exports.push([module.i, ".card {\n  height: 90%;\n  width: 90%;\n}\n\n", ""]);
 
 // exports
 
@@ -6603,7 +6605,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".main-view {\n  height: 88%;\n}\n", ""]);
+exports.push([module.i, ".main-view {\n  height: 88%;\n}\n.cards-view {\n  width: 58%;\n}\n", ""]);
 
 // exports
 
@@ -38514,7 +38516,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "rounded-md bg-gray-400 card mr-2 grid grid-rows-4" },
+    { staticClass: "rounded-md bg-gray-400 card mx-4 grid grid-rows-4" },
     [
       _c(
         "div",
@@ -38701,19 +38703,28 @@ var render = function() {
       [
         _c("input-contact"),
         _vm._v(" "),
-        _vm._l(_vm.contacts, function(contact) {
-          return _c("contact-card", {
-            key: contact.id,
-            attrs: {
-              contactName: contact.nombre,
-              contactLastName: contact.apellido,
-              contactAreaCode: contact.codigo_area,
-              contactPhoneNumeber: contact.numero
-            }
-          })
-        })
+        _c(
+          "div",
+          {
+            staticClass:
+              "cards-view flex grid grid-cols-3 gap-3 py-2 items-start place-items-center"
+          },
+          _vm._l(_vm.contacts, function(contact) {
+            return _c("contact-card", {
+              key: contact.id,
+              staticClass: "col-span-1",
+              attrs: {
+                contactName: contact.nombre,
+                contactLastName: contact.apellido,
+                contactAreaCode: contact.codigo_area,
+                contactPhoneNumeber: contact.numero
+              }
+            })
+          }),
+          1
+        )
       ],
-      2
+      1
     )
   ])
 }
@@ -38741,7 +38752,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "h-screen font-sans" },
+    { staticClass: "h-screen w-screen font-sans" },
     [_c("nav-bar"), _vm._v(" "), _vm._t("default")],
     2
   )

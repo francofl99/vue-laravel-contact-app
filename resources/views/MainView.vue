@@ -2,13 +2,15 @@
     <view-container>
         <div class="bg-gray-500 w-full p-4 flex main-view justify-between">
             <input-contact/>
-            <contact-card v-for="contact in contacts" 
+            <div class="cards-view flex grid grid-cols-3 gap-3 py-2 items-start place-items-center">
+                <contact-card v-for="contact in contacts" class="col-span-1"
                 :key="contact.id"
                 :contactName="contact.nombre"
                 :contactLastName="contact.apellido"
                 :contactAreaCode="contact.codigo_area"
                 :contactPhoneNumeber="contact.numero" 
-            />
+                />
+            </div>
         </div>
     </view-container>   
 </template>
@@ -57,5 +59,8 @@ export default {
 <style>
 .main-view {
     height: 88%;
+}
+.cards-view {
+    width: 58%;
 }
 </style>
