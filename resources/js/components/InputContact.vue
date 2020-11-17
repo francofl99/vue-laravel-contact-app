@@ -28,6 +28,6 @@ export default {
 <style>
 .input {
     width: 30%;
-    height: 82%;
+    height: 73%;
 }
 </style>

@@ -6567,7 +6567,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".input {\n  width: 30%;\n  height: 82%;\n}\n", ""]);
+exports.push([module.i, ".input {\n  width: 30%;\n  height: 73%;\n}\n", ""]);
 
 // exports
 
@@ -38516,17 +38516,21 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "rounded-md bg-gray-400 card mx-4 grid grid-rows-4" },
+    {
+      staticClass:
+        "border-2 border-gray-800 rounded-md bg-gray-400 card mx-4 grid grid-rows-4"
+    },
     [
       _c(
         "div",
         {
-          staticClass: "rounded-t-md row-span-1 bg-gray-800 p-2 text-gray-200 "
+          staticClass:
+            "row-span-1 bg-gray-800 p-2 text-gray-200 items-center flex"
         },
         [_vm._v("Nombre: " + _vm._s(_vm.contactName))]
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "p-2 text-gray-800" }, [
+      _c("div", { staticClass: "p-2 text-gray-800 items-center flex" }, [
         _vm._v("Apellido: " + _vm._s(_vm.contactLastName))
       ]),
       _vm._v(" "),
@@ -38707,7 +38711,7 @@ var render = function() {
           "div",
           {
             staticClass:
-              "cards-view flex grid grid-cols-3 gap-3 py-2 items-start place-items-center"
+              "cards-view grid grid-cols-3 gap-3 p-4 items-start place-items-center bg-gray-400 rounded-md"
           },
           _vm._l(_vm.contacts, function(contact) {
             return _c("contact-card", {

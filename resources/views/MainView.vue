@@ -2,7 +2,7 @@
     <view-container>
         <div class="bg-gray-500 w-full p-4 flex main-view justify-between">
             <input-contact/>
-            <div class="cards-view flex grid grid-cols-3 gap-3 py-2 items-start place-items-center">
+            <div class="cards-view grid grid-cols-3 gap-3 p-4 items-start place-items-center bg-gray-400 rounded-md">
                 <contact-card v-for="contact in contacts" class="col-span-1"
                 :key="contact.id"
                 :contactName="contact.nombre"
