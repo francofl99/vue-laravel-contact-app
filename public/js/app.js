@@ -1965,6 +1965,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1985,8 +1987,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "InputContact"
+  name: "InputContact",
+  data: function data() {
+    return {
+      contactName: '',
+      contactLastName: '',
+      contactAreaNumber: '',
+      contactPhoneNumber: ''
+    };
+  },
+  methods: {
+    saveContact: function saveContact() {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/saveContact', {
+        nombre: this.contactName,
+        apellido: this.contactLastName,
+        codigo_area: this.contactAreaNumber,
+        numero: this.contactPhoneNumber
+      }).then(function (resolve) {
+        console.log(resolve.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -38566,82 +38637,144 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "bg-gray-400 rounded-md input ml-4 mt-4 p-4" },
-      [
-        _c("form", { staticClass: "flex-wrap flex" }, [
-          _c(
-            "label",
-            { staticClass: "text-gray-800", attrs: { for: "nombre" } },
-            [_vm._v("Nombre")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "my-2 rounded-md h-8 pl-2 w-full",
-            attrs: { type: "text", id: "nombre", placeholder: "Juan" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "text-gray-800", attrs: { for: "apellido" } },
-            [_vm._v("Apellido")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "my-2 rounded-md h-8 pl-2 w-full",
-            attrs: { type: "text", id: "apellido", placeholder: "Perez" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
-            { staticClass: "text-gray-800 w-full", attrs: { for: "area" } },
-            [_vm._v("Codigo de area")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: " my-2 rounded-md h-8 w-20 pl-2",
-            attrs: { type: "text", id: "area", placeholder: "358" }
-          }),
-          _vm._v(" "),
-          _c(
-            "label",
+  return _c(
+    "div",
+    { staticClass: "bg-gray-400 rounded-md input ml-4 mt-4 p-4" },
+    [
+      _c("form", { staticClass: "flex-wrap flex" }, [
+        _c(
+          "label",
+          { staticClass: "text-gray-800", attrs: { for: "nombre" } },
+          [_vm._v("\n                Nombre\n        ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
             {
-              staticClass: "text-gray-800 w-full",
-              attrs: { for: "numero-telefono" }
-            },
-            [_vm._v("Numero")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "mt-2 rounded-md h-8 pl-2 w-32",
-            attrs: {
-              type: "text",
-              id: "numero-telefono",
-              placeholder: "5 166 293"
+              name: "model",
+              rawName: "v-model",
+              value: _vm.contactName,
+              expression: "contactName"
             }
-          })
-        ]),
+          ],
+          staticClass: "my-2 rounded-md h-8 pl-2 w-full",
+          attrs: { type: "text", id: "nombre", placeholder: "Juan" },
+          domProps: { value: _vm.contactName },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.contactName = $event.target.value
+            }
+          }
+        }),
         _vm._v(" "),
         _c(
-          "button",
+          "label",
+          { staticClass: "text-gray-800", attrs: { for: "apellido" } },
+          [_vm._v("\n                Apellido\n        ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.contactLastName,
+              expression: "contactLastName"
+            }
+          ],
+          staticClass: "my-2 rounded-md h-8 pl-2 w-full",
+          attrs: { type: "text", id: "apellido", placeholder: "Perez" },
+          domProps: { value: _vm.contactLastName },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.contactLastName = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
+          { staticClass: "text-gray-800 w-full", attrs: { for: "area" } },
+          [_vm._v("\n                Codigo de area\n        ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.contactAreaNumber,
+              expression: "contactAreaNumber"
+            }
+          ],
+          staticClass: " my-2 rounded-md h-8 w-20 pl-2",
+          attrs: { type: "text", id: "area", placeholder: "358" },
+          domProps: { value: _vm.contactAreaNumber },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.contactAreaNumber = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c(
+          "label",
           {
-            staticClass:
-              "border-b-4 border-teal-500 font-bold mt-8 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150"
+            staticClass: "text-gray-800 w-full",
+            attrs: { for: "numero-telefono" }
           },
-          [_vm._v("Agendar")]
-        )
-      ]
-    )
-  }
-]
+          [_vm._v("\n                Numero\n        ")]
+        ),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.contactPhoneNumber,
+              expression: "contactPhoneNumber"
+            }
+          ],
+          staticClass: "mt-2 rounded-md h-8 pl-2 w-32",
+          attrs: {
+            type: "text",
+            id: "numero-telefono",
+            placeholder: "5 166 293"
+          },
+          domProps: { value: _vm.contactPhoneNumber },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.contactPhoneNumber = $event.target.value
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "border-b-4 border-teal-500 font-bold mt-8 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150",
+          on: { click: _vm.saveContact }
+        },
+        [_vm._v("\n        Agendar\n    ")]
+      )
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
