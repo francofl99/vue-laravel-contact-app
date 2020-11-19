@@ -2,15 +2,7 @@
     <view-container>
         <div class="bg-gray-500 w-full p-4 flex main-view justify-between">
             <input-contact/>
-            <div class="cards-view grid grid-cols-3 gap-3 p-4 items-start place-items-center bg-gray-400 rounded-md">
-                <contact-card v-for="contact in contacts" class="col-span-1"
-                :key="contact.id"
-                :contactName="contact.nombre"
-                :contactLastName="contact.apellido"
-                :contactAreaCode="contact.codigo_area"
-                :contactPhoneNumeber="contact.numero" 
-                />
-            </div>
+            <card-container/>
         </div>
     </view-container>   
 </template>
@@ -18,8 +10,7 @@
 <script>
 import ViewContainer from './ViewContainer.vue'
 import InputContact from '../js/components/InputContact'
-import ContactCard from '../js/components/ContactCard'
-import axios from 'axios'
+import CardContainer from '../js/components/CardContainer.vue'
 
 export default {
     name: 'MainView',
@@ -27,40 +18,15 @@ export default {
     components: { 
         ViewContainer,
         InputContact,
-        ContactCard
+        CardContainer,
     },
 
-    data() {
-        return {
-            contacts: []
-        }
-        
-    },
-
-     methods: {
-        getContacts() {
-            axios.get(`/api/getContacts`)
-            .then((response) => {
-                this.contacts = response.data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        },
-    },
-
-    created() {
-        this.getContacts();
-        console.log(this.contacts);
-    }
+    
 }
 </script>
 
 <style>
 .main-view {
     height: 88%;
-}
-.cards-view {
-    width: 58%;
 }
 </style>
