@@ -1999,6 +1999,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactCard',
   props: {
@@ -38730,13 +38735,23 @@ var render = function() {
         _vm._v("Apellido: " + _vm._s(_vm.contactLastName))
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "p-2 text-gray-800" }, [
-        _vm._v("Codigo de Area: " + _vm._s(_vm.contactAreaCode))
+      _c("div", { staticClass: "p-2 text-gray-800 items-start flex" }, [
+        _vm._v(
+          "Numero: (" +
+            _vm._s(_vm.contactAreaCode) +
+            ") - " +
+            _vm._s(_vm.contactPhoneNumeber)
+        )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "p-2 text-gray-800" }, [
-        _vm._v("Numero: " + _vm._s(_vm.contactPhoneNumeber))
-      ])
+      _c(
+        "button",
+        {
+          staticClass:
+            " ml-2 w-20 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
+        },
+        [_vm._v("\n      Editar\n  ")]
+      )
     ]
   )
 }
