@@ -1,6 +1,6 @@
 <template>
     
-    <div class="bg-gray-400 rounded-md input ml-4 mt-4 p-4">
+    <div class="bg-gray-400 rounded-md input mx-16 p-4 self-center">
 
         <form class="flex-wrap flex">
             <label 
