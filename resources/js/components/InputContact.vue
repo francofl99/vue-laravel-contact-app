@@ -93,6 +93,8 @@ export default {
           .catch((error) => {
               console.log(error);
           });
+
+          this.$emit('newContactAdded'); 
       }
   }
 
