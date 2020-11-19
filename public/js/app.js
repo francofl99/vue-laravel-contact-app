@@ -2004,6 +2004,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ContactCard',
   props: {
@@ -38744,18 +38751,36 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
+      _vm._m(0)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " px-2 flex justify-between" }, [
       _c(
         "button",
         {
           staticClass:
-            " ml-2 w-20 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
+            " w-24 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
         },
-        [_vm._v("\n      Editar\n  ")]
+        [_vm._v("\n              Editar\n          ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass:
+            " w-20 h-12 border-b-4 border-red-500 font-bold hover:border-red-600 bg-red-400 rounded-md p-2 text-red-900 border-transparent hover:bg-red-500 transition duration-150"
+        },
+        [_vm._v("\n              Borrar\n          ")]
       )
-    ]
-  )
-}
-var staticRenderFns = []
+    ])
+  }
+]
 render._withStripped = true
 
 

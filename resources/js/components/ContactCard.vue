@@ -4,11 +4,18 @@
       <div class="p-2 text-gray-800 items-center flex">Apellido: {{ contactLastName }}</div>
       <div class="p-2 text-gray-800 items-start flex" >Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumeber }}</div>
 
-      <button 
-        class=" ml-2 w-20 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
-      >
-        Editar
-    </button>
+        <div class=" px-2 flex justify-between">
+            <button 
+                class=" w-24 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
+            >
+                Editar
+            </button>
+            <button 
+                class=" w-20 h-12 border-b-4 border-red-500 font-bold hover:border-red-600 bg-red-400 rounded-md p-2 text-red-900 border-transparent hover:bg-red-500 transition duration-150"
+            >
+                Borrar
+            </button>
+        </div>
   </div>
 </template>
 
