@@ -6683,7 +6683,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card {\n  height: 90%;\n  width: 90%;\n}\n\n", ""]);
+exports.push([module.i, ".card {\n  height: 90%;\n  width: 90%;\n}\n.button {\n  height: 3rem;\n  border-bottom-width: 4px;\n  font-weight: 700;\n  border-radius: 0.375rem;\n  padding: 0.5rem;\n  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;\n  transition-duration: 150ms;\n}\n\n", ""]);
 
 // exports
 
@@ -38765,7 +38765,7 @@ var staticRenderFns = [
         "button",
         {
           staticClass:
-            " w-24 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
+            "w-32 button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
         },
         [_vm._v("\n              Editar\n          ")]
       ),
@@ -38774,7 +38774,7 @@ var staticRenderFns = [
         "button",
         {
           staticClass:
-            " w-20 h-12 border-b-4 border-red-500 font-bold hover:border-red-600 bg-red-400 rounded-md p-2 text-red-900 border-transparent hover:bg-red-500 transition duration-150"
+            "w-16 button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500"
         },
         [_vm._v("\n              Borrar\n          ")]
       )

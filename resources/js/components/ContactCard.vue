@@ -6,12 +6,12 @@
 
         <div class=" px-2 flex justify-between">
             <button 
-                class=" w-24 h-12 border-b-4 border-blue-500 font-bold hover:border-blue-600 bg-blue-400 rounded-md p-2 text-blue-900 border-transparent hover:bg-blue-500 transition duration-150"
+                class="w-32 button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
             >
                 Editar
             </button>
             <button 
-                class=" w-20 h-12 border-b-4 border-red-500 font-bold hover:border-red-600 bg-red-400 rounded-md p-2 text-red-900 border-transparent hover:bg-red-500 transition duration-150"
+                class="w-16 button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500"
             >
                 Borrar
             </button>
@@ -36,6 +36,22 @@ export default {
 .card {
     height: 90%;
     width: 90%;
+}
+
+.button {
+    height: 3rem;
+
+    border-bottom-width: 4px;
+
+    font-weight: 700;
+
+    border-radius: 0.375rem;
+
+    padding: 0.5rem;
+
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 150ms;
+    
 }
 
 </style>
