@@ -6,7 +6,7 @@
             <label 
                 for="nombre" 
                 class="text-gray-800">
-                    Nombre
+                    Nombre:
             </label>
             <input 
                 type="text" id="nombre" 
@@ -18,7 +18,7 @@
             <label 
                 for="apellido" 
                 class="text-gray-800">
-                    Apellido
+                    Apellido:
             </label>
             <input 
                 type="text" 
@@ -31,7 +31,7 @@
             <label 
                 for="area" 
                 class="text-gray-800 w-full">
-                    Codigo de area
+                    Codigo de area:
             </label>
             <input 
                 type="text" 
@@ -43,7 +43,7 @@
             <label 
                 for="numero-telefono" 
                 class="text-gray-800 w-full">
-                    Numero
+                    Numero:
             </label>
             <input 
                 type="text" 
