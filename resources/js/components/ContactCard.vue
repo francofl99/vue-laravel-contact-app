@@ -8,10 +8,10 @@
             <button 
                 class=" mr-2 button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
             >
-                <vue-hicons class="mx-auto" name="pencil_alt" is-filled width-icon="5"/>
+                <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
             </button>
-            <button class="button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500">
-                <vue-hicons class="mx-auto" width-icon="5" name="trash" is-filled/>
+            <button class="button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500" @click="removeContact">
+                <vue-hicons class="mx-auto" :width-icon="5" name="trash" is-filled/>
             </button>
         </div>
   </div>
@@ -19,11 +19,13 @@
 
 <script>
 import VueHicons from "vue-hicons"
+import axios from 'axios'
 
 export default {
     name: 'ContactCard',
 
     props: {
+        contactId: Number,
         contactName: String,
         contactLastName: String,
         contactAreaCode: String,
@@ -32,6 +34,20 @@ export default {
 
     components: {
         VueHicons
+    },
+
+    methods: {
+        removeContact() {
+            axios.post('/deleteContact', {
+                id: this.contactId
+            })
+            .then((response) => {
+                console.log('contact' + this.contactId + 'removed');
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
     }
 } 
 </script>

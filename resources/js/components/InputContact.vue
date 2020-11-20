@@ -58,7 +58,7 @@
             class="border-b-4 border-teal-500 font-bold mt-12 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
             @click="saveContact"
         >
-            <vue-hicons name="check_circle" is-filled width-icon="5" class=" my-auto mr-1"/>
+            <vue-hicons name="check_circle" is-filled :width-icon="5" class=" my-auto mr-1"/>
                 Agendar
         </button>
     </div>

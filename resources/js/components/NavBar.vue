@@ -1,7 +1,7 @@
 <template>
   
     <div class="w-full bg-gray-800 nav-bar flex pl-4">
-        <vue-hicons name="users" is-filled width-icon="6" fill-color="white"/>
+        <vue-hicons name="users" is-filled :width-icon="6" fill-color="white"/>
         <h1 class=" text-gray-200 self-center ml-2  text-xl  font-sans ">Contactos</h1>
     </div>
 
