@@ -16,21 +16,20 @@ import ContactCard from './ContactCard.vue'
 import axios from 'axios'
 
 export default {
-    name: 'CardContainer',
+name: 'CardContainer',
 
-    data() {
-        return {
-            contacts: []
-        }
-        
-    },
+data() {
+    return {
+        contacts: []
+    }
+},
 
     components: {
         ContactCard
     },
 
     methods: {
-        getContacts() {
+          getContacts() {
             axios.get(`/api/getContacts`)
             .then((response) => {
                 this.contacts = response.data;
@@ -38,14 +37,20 @@ export default {
             .catch((error) => {
                 console.log(error);
             });
+          },
         },
-    },
 
-    created() {
+
+
+      created() {
         this.getContacts();
-        console.log(this.contacts);
-    }
+      },
 
+      mounted() {
+          this.$root.$on('dataBaseModificated', (data) => {
+              this.getContacts();
+          })
+      }
 }
 </script>
 

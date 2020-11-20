@@ -100,7 +100,7 @@ export default {
               console.log(error);
           });
 
-          this.$emit('newContactAdded'); 
+          this.$root.$emit('dataBaseModificated');
       }
   }
 

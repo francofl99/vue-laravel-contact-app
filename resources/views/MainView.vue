@@ -1,8 +1,8 @@
 <template>
   <view-container>
     <div class="bg-gray-500 w-full p-4 flex main-view justify-between">
-      <input-contact @newContactAdded="cardContainerKey += 1"/>
-      <card-container :key="cardContainerKey" />
+      <input-contact/>
+      <card-container/>
     </div>
   </view-container>
 </template>
@@ -25,6 +25,7 @@
 
         data() {
              return {
+                contacts: [],
                 cardContainerKey: 0
             }   
         },
