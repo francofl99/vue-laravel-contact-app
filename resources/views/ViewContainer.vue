@@ -10,12 +10,11 @@
 import NavBar from '../js/components/NavBar'
 
 export default {
-    name: 'ViewContainer',
+  name: 'ViewContainer',
 
-    components: { 
-        NavBar
-    }
-
+  components: {
+    NavBar
+  }
 
 }
 </script>

@@ -8,28 +8,26 @@
 </template>
 
 <script>
-    import ViewContainer from "./ViewContainer.vue";
-    import InputContact from '../js/components/InputContact'
-    import CardContainer from "../js/components/CardContainer.vue";
+import ViewContainer from './ViewContainer.vue'
+import InputContact from '../js/components/InputContact'
+import CardContainer from '../js/components/CardContainer.vue'
 
-    import axios from 'axios';
+export default {
+  name: 'MainView',
 
-    export default {
-        name: "MainView",
+  components: {
+    ViewContainer,
+    InputContact,
+    CardContainer
+  },
 
-        components: {
-            ViewContainer,
-            InputContact,
-            CardContainer,
-        },
-
-        data() {
-             return {
-                contacts: [],
-                cardContainerKey: 0
-            }   
-        },
-    };
+  data () {
+    return {
+      contacts: [],
+      cardContainerKey: 0
+    }
+  }
+}
 </script>
 
 <style>

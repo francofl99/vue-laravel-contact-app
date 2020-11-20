@@ -6,7 +6,7 @@
             :contactName="contact.nombre"
             :contactLastName="contact.apellido"
             :contactAreaCode="contact.codigo_area"
-            :contactPhoneNumeber="contact.numero" 
+            :contactPhoneNumeber="contact.numero"
         />
     </div>
 </template>
@@ -16,41 +16,39 @@ import ContactCard from './ContactCard.vue'
 import axios from 'axios'
 
 export default {
-name: 'CardContainer',
+  name: 'CardContainer',
 
-data() {
+  data () {
     return {
-        contacts: []
+      contacts: []
     }
-},
+  },
 
-    components: {
-        ContactCard
-    },
+  components: {
+    ContactCard
+  },
 
-    methods: {
-          getContacts() {
-            axios.get(`/api/getContacts`)
-            .then((response) => {
-                this.contacts = response.data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-          },
-        },
+  methods: {
+    getContacts () {
+      axios.get('/api/getContacts')
+        .then((response) => {
+          this.contacts = response.data
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    }
+  },
 
+  created () {
+    this.getContacts()
+  },
 
-
-      created() {
-        this.getContacts();
-      },
-
-      mounted() {
-          this.$root.$on('dataBaseModificated', (data) => {
-              this.getContacts();
-          })
-      }
+  mounted () {
+    this.$root.$on('data-base-modificated', (data) => {
+      this.getContacts()
+    })
+  }
 }
 </script>
 

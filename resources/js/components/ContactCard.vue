@@ -5,7 +5,7 @@
       <div class="p-2 text-gray-800 items-start flex" >Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumeber }}</div>
 
         <div class=" px-2 flex justify-items-start">
-            <button 
+            <button
                 class=" mr-2 button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
             >
                 <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
@@ -18,40 +18,40 @@
 </template>
 
 <script>
-import VueHicons from "vue-hicons"
+import VueHicons from 'vue-hicons'
 import axios from 'axios'
 
 export default {
-    name: 'ContactCard',
+  name: 'ContactCard',
 
-    props: {
-        contactId: Number,
-        contactName: String,
-        contactLastName: String,
-        contactAreaCode: String,
-        contactPhoneNumeber: String
-    },
+  props: {
+    contactId: Number,
+    contactName: String,
+    contactLastName: String,
+    contactAreaCode: String,
+    contactPhoneNumeber: String
+  },
 
-    components: {
-        VueHicons
-    },
+  components: {
+    VueHicons
+  },
 
-    methods: {
-        removeContact() {
-            axios.post('/deleteContact', {
-                id: this.contactId
-            })
-            .then((response) => {
-                console.log('contact' + this.contactId + 'removed');
-            })
-            .catch((error) => {
-                console.log(error);
-            })
+  methods: {
+    removeContact () {
+      axios.post('/deleteContact', {
+        id: this.contactId
+      })
+        .then((response) => {
+          console.log('contact' + this.contactId + 'removed')
+        })
+        .catch((error) => {
+          console.log(error)
+        })
 
-            this.$root.$emit('dataBaseModificated');
-        }
+      this.$root.$emit('data-base-modificated')
     }
-} 
+  }
+}
 </script>
 
 <style>
