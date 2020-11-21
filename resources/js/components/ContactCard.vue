@@ -1,5 +1,5 @@
 <template>
-  <div class="border-2 border-gray-800 rounded-md bg-gray-400 card mx-4 grid grid-rows-4">
+  <div class="border-2 border-gray-800 rounded-md bg-gray-400 card grid grid-rows-4">
       <div class="row-span-1 bg-gray-800 p-2 text-gray-200 items-center flex">Nombre: {{ contactName }}</div>
       <div class="p-2 text-gray-800 items-center flex">Apellido: {{ contactLastName }}</div>
       <div class="p-2 text-gray-800 items-start flex" >Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumeber }}</div>
@@ -56,12 +56,12 @@ export default {
 
 <style>
 .card {
-    height: 90%;
-    width: 90%;
+    height: 14rem;
+    width: 100%;
 }
 
 .button {
-    height: 90%;
+    height: 85%;
     width: 28%;
 
     border-bottom-width: 4px;

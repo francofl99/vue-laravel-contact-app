@@ -1,6 +1,6 @@
 <template>
-  <div class="cards-view grid-rows-2 grid grid-cols-3 py-4 px-2 items-center place-items-center bg-gray-400 rounded-md">
-        <contact-card v-for="contact in contacts"
+  <div class="cards-view p-4 gap-4 grid grid-cols-3 items-center place-items-center overflow-y-auto bg-gray-400 rounded-md   ">
+      <contact-card v-for="contact in contacts"
             :key="contact.id"
             :contactId="contact.id"
             :contactName="contact.nombre"
@@ -8,7 +8,7 @@
             :contactAreaCode="contact.codigo_area"
             :contactPhoneNumeber="contact.numero"
         />
-    </div>
+  </div>
 </template>
 
 <script>
