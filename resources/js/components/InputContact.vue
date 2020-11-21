@@ -34,7 +34,7 @@
                     Codigo de area:
             </label>
             <input
-                type="text"
+                type="number"
                 id="area"
                 class=" my-2 rounded-md h-8 w-20 pl-2"
                 placeholder="358"
@@ -46,7 +46,7 @@
                     Numero:
             </label>
             <input
-                type="text"
+                type="number"
                 id="numero-telefono"
                 class="mt-2 rounded-md h-8 pl-2 w-32"
                 placeholder="5 166 293"
