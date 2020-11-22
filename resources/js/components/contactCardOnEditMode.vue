@@ -70,9 +70,7 @@ export default {
       thisContactName: this.contactName,
       thisContactLastName: this.contactLastName,
       thisContactAreaCode: this.contactAreaCode,
-      thisContactPhoneNumber: this.contactPhoneNumber,
-
-      cardOnViewMode: true
+      thisContactPhoneNumber: this.contactPhoneNumber
     }
   },
 
@@ -94,7 +92,7 @@ export default {
 
       this.$root.$emit('data-base-modificated')
 
-      this.$emit('return-view')
+      this.$emit('change-to-view-mode')
     }
   }
 
