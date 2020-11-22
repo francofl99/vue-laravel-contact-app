@@ -1,5 +1,5 @@
 <template>
-<div class="grid grid-rows-4 border-2 border-gray-800 rounded-md bg-gray-400 card ">
+<div class="card-design">
 
 <div class="row-span-1 bg-gray-800 p-2 text-gray-800 items-center">
             <input
@@ -100,20 +100,6 @@ export default {
 </script>
 
 <style>
-.card {
-    height: 14rem;
-}
-
-.button {
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-    transition-duration: 150ms;
-
-     border-bottom-width: 4px;
-
-    border-radius: 0.375rem;
-
-}
-
 .save-button {
   height: 85%;
   width: 46%;
@@ -131,5 +117,4 @@ export default {
 
   justify-content: space-between;
 }
-
 </style>
