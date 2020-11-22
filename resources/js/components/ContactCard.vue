@@ -23,12 +23,12 @@
 
   <div  v-else class="grid grid-rows-4 border-2 border-gray-800 rounded-md bg-gray-400 card ">
 
-        <div class="row-span-1 bg-gray-800 p-2 text-gray-200 items-center">
+        <div class="row-span-1 bg-gray-800 p-2 text-gray-800 items-center">
             <input
                 type="text" id="nombre"
                 class="rounded-md h-8 pl-2 w-full"
                 placeholder="Nombre"
-                v-bind="thisContactName"
+                v-model="thisContactName"
             />
 
         </div>
@@ -38,7 +38,7 @@
                 id="apellido"
                 class=" rounded-md  h-8 pl-2 w-full"
                 placeholder="Apellido"
-                v-bind="thisContactLastName"
+                v-model="thisContactLastName"
             />
 
         </div>
@@ -49,21 +49,21 @@
                 id="area"
                 class="rounded-md h-8 w-20 pl-2"
                 placeholder="Area"
-                v-bind="thisContactAreaCode"
+                v-model="thisContactAreaCode"
             />
             <input
                 type="number"
                 id="numero-telefono"
                 class="rounded-md h-8 pl-2 w-32"
                 placeholder="Numero"
-                v-bind="thisContactPhoneNumber"
+                v-model="thisContactPhoneNumber"
             />
 
         </div>
 
           <button
             class="items-center place-items-start save-button border-b-4 border-teal-500 font-bold mx-2 pr-2  hover:border-teal-600 bg-teal-400 rounded-md  text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
-            @click="cardOnViewMode = true">
+            @click="updateContact">
               <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
           </button>
   </div>
@@ -112,6 +112,26 @@ export default {
         .catch((error) => {
           console.log(error)
         })
+
+      this.$root.$emit('data-base-modificated')
+    },
+
+    updateContact () {
+      axios.post('/updateContact', {
+        id: this.contactId,
+        nombre: this.thisContactName,
+        apellido: this.thisContactLastName,
+        codigo_area: this.thisContactAreaCode,
+        numero: this.thisContactPhoneNumber
+      })
+        .then((resolve) => {
+          console.log(resolve.data)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+
+      this.cardOnViewMode = true
 
       this.$root.$emit('data-base-modificated')
     }

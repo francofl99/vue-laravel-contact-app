@@ -30,6 +30,19 @@ class ContactsController extends Controller
         }
     }
 
+    public function updateContact(Request $data) {
+        try {
+            DB::table('contacts')->where('id', $data['id'])->update([
+                'nombre' => $data['nombre'],
+                'apellido' => $data['apellido'],
+                'codigo_area' => $data['codigo_area'],
+                'numero' => $data['numero']
+            ]);
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
+
     public function removeContact(Request $data) {
         try {
             DB::table('contacts')->where('id', $data['id'])->delete();
