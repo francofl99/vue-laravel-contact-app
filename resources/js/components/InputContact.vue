@@ -57,7 +57,7 @@
               <button
               class="  border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
             >
-              Color
+              Color <vue-hicons name="chevron_down" :width-icon="5" is-filled class=" my-auto ml-1"/>
             </button>
             </div>
 
