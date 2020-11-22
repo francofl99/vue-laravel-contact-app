@@ -62,9 +62,9 @@ export default {
 
 <style>
 .view-button {
-    height: 85%;
-    width: 28%;
+  height: 85%;
+  width: 28%;
 
-    padding: 0.5rem;
+  padding: 0.5rem;
 }
 </style>

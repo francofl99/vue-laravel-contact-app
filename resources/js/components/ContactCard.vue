@@ -28,7 +28,6 @@
 </template>
 
 <script>
-
 import contactCardOnEditMode from './contactCardOnEditMode'
 import contactCardOnViewMode from './contactCardOnViewMode'
 
@@ -58,23 +57,23 @@ export default {
 
 <style>
 .card-design {
-    height: 14rem;
+  height: 14rem;
 
   border-radius: 0.375rem;
 
-   --bg-opacity: 1;
-    background-color: #cbd5e0;
-    background-color: rgba(203, 213, 224, var(--bg-opacity));
+  --bg-opacity: 1;
+  background-color: #cbd5e0;
+  background-color: rgba(203, 213, 224, var(--bg-opacity));
 
-    --border-opacity: 1;
-    border-color: #2d3748;
-    border-color: rgba(45, 55, 72, var(--border-opacity));
+  --border-opacity: 1;
+  border-color: #2d3748;
+  border-color: rgba(45, 55, 72, var(--border-opacity));
 
-      border-width: 2px;
+  border-width: 2px;
 
-        display: grid;
+  display: grid;
 
-      grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .button {
