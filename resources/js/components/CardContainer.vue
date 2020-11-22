@@ -1,12 +1,12 @@
 <template>
-  <div class="cards-view p-4 gap-4 grid grid-cols-3 items-center place-items-center overflow-y-auto bg-gray-400 rounded-md">
+  <div class="cards-view p-4 gap-4 grid grid-cols-3 items-start place-items-center overflow-y-auto bg-gray-400 rounded-md">
     <contact-card v-for="contact in contacts"
       :key="contact.id"
       :contactId="contact.id"
       :contactName="contact.nombre"
       :contactLastName="contact.apellido"
       :contactAreaCode="contact.codigo_area"
-      :contactPhoneNumeber="contact.numero"
+      :contactPhoneNumber="contact.numero"
     />
   </div>
 </template>
