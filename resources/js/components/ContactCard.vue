@@ -10,11 +10,11 @@
         <div class="px-2 flex justify-items-start">
             <button
                 @click="cardOnViewMode = false"
-                class="mr-2 button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
+                class="mr-2 button view-button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
             >
                 <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
             </button>
-            <button class="button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500" @click="removeContact">
+            <button class="button view-button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500" @click="removeContact">
                 <vue-hicons class="mx-auto" :width-icon="5" name="trash" is-filled/>
             </button>
         </div>
@@ -62,7 +62,7 @@
         </div>
 
           <button
-            class="items-center place-items-start save-button border-b-4 border-teal-500 font-bold mx-2 pr-2  hover:border-teal-600 bg-teal-400 rounded-md  text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
+            class="save-button button border-teal-500 hover:border-teal-600 bg-teal-400 button text-teal-900 hover:bg-teal-500 flex"
             @click="updateContact">
               <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
           </button>
@@ -131,9 +131,9 @@ export default {
           console.log(error)
         })
 
-      this.cardOnViewMode = true
-
       this.$root.$emit('data-base-modificated')
+
+      this.cardOnViewMode = true
     }
   }
 }
@@ -145,22 +145,39 @@ export default {
 }
 
 .button {
-    height: 85%;
-    width: 28%;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 150ms;
 
-    border-bottom-width: 4px;
+     border-bottom-width: 4px;
 
     border-radius: 0.375rem;
 
+}
+
+.view-button {
+    height: 85%;
+    width: 28%;
+
     padding: 0.5rem;
 
-    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-    transition-duration: 150ms;
 }
 
 .save-button {
   height: 85%;
   width: 46%;
+
+  place-items: start;
+
+  align-items: center;
+
+  font-weight: 700;
+
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+
+  padding-right: 0.5rem;
+
+  justify-content: space-between;
 }
 
 </style>
