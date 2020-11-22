@@ -1,6 +1,6 @@
 <template>
 
-    <div class="bg-gray-400 rounded-md input mx-16 p-4 self-center">
+    <div class="bg-gray-400 rounded-md input-design mx-16 p-4 self-center">
 
         <form class="flex-wrap flex">
             <label
@@ -52,10 +52,19 @@
                 placeholder="5 166 293"
                 v-model="contactPhoneNumber"
             />
+
+            <div class="w-full mt-4">
+              <button
+              class="  border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
+            >
+              Color
+            </button>
+            </div>
+
         </form>
 
         <button
-            class="border-b-4 border-teal-500 font-bold mt-12 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
+            class="border-b-4 border-teal-500 font-bold mt-6 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
             @click="saveContact"
         >
             <vue-hicons name="check_circle" is-filled :width-icon="5" class=" my-auto mr-1"/>
@@ -108,8 +117,8 @@ export default {
 </script>
 
 <style>
-.input {
+.input-design {
     width: 30%;
-    height: 70%;
+    height: 80%;
 }
 </style>

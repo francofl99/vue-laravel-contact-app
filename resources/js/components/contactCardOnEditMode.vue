@@ -90,7 +90,7 @@ export default {
 
       this.$root.$emit('data-base-modificated')
 
-      this.$emit('change-to-view-mode')
+      this.$emit('contact-updated')
     }
   }
 

@@ -6,7 +6,7 @@
 
         <div class="px-2 flex justify-items-start">
             <button
-                @click="changeToEditView"
+                @click="notifyClick"
                 class="mr-2 button view-button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
             >
                 <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
@@ -53,8 +53,8 @@ export default {
       this.$root.$emit('data-base-modificated')
     },
 
-    changeToEditView () {
-      this.$emit('change-to-edit-mode')
+    notifyClick () {
+      this.$emit('edit-button-clicked')
     }
   }
 }

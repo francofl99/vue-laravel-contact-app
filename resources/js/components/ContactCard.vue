@@ -9,7 +9,7 @@
       :contactAreaCode="contactAreaCode"
       :contactPhoneNumber="contactPhoneNumber"
 
-      @change-to-edit-mode="cardOnViewMode = false"
+      @edit-button-clicked="cardOnViewMode = false"
     />
   </div>
 
@@ -21,7 +21,7 @@
       :contactAreaCode="contactAreaCode"
       :contactPhoneNumber="contactPhoneNumber"
 
-      @change-to-view-mode="cardOnViewMode = true"/>
+      @contact-updated="cardOnViewMode = true"/>
   </div>
 </div>
 
