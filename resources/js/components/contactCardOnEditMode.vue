@@ -1,7 +1,7 @@
 <template>
 <div class="card-design">
 
-  <div class="row-span-1 bg-gray-800 p-2 text-gray-800 items-center">
+  <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-800 items-center">
     <input
       type="text"
       class="rounded-md h-8 pl-2 w-full"
@@ -13,7 +13,7 @@
   <div class="p-2 text-gray-800 items-center flex">
     <input
       type="text"
-      class=" rounded-md  h-8 pl-2 w-full"
+      class=" rounded-md  h-8 pl-2 w-full bg-gray-400"
       placeholder="Apellido"
       v-model="thisContactLastName"
     />
@@ -22,13 +22,13 @@
   <div class="p-2 text-gray-800 items-start flex flex-wrap justify-between">
     <input
       type="number"
-      class="rounded-md h-8 w-20 pl-2"
+      class="rounded-md h-8 w-20 pl-2 bg-gray-400"
       placeholder="Area"
       v-model="thisContactAreaCode"
     />
     <input
       type="number"
-      class="rounded-md h-8 pl-2 w-32"
+      class="rounded-md h-8 pl-2 w-32 bg-gray-400"
       placeholder="Numero"
       v-model="thisContactPhoneNumber"
     />
@@ -60,7 +60,8 @@ export default {
     contactName: String,
     contactLastName: String,
     contactAreaCode: String,
-    contactPhoneNumber: String
+    contactPhoneNumber: String,
+    contactColor: String
   },
 
   data () {

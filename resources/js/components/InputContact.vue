@@ -70,19 +70,19 @@
         <div class="mt-2 w-64 drop-menu bg-gray-700 rounded-md absolute overflow-auto"> 
           <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer">
 
-            <div :class="{selectarea: contactColor == 'Sin color'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Sin color')">
+            <div :class="{selectarea: contactColor == 'gray'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('gray')">
               <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-600 mr-3 " /> Sin color
             </div>
             
-            <div :class="{selectarea: contactColor == 'Amarillo'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Amarillo')">
-              <div class=" w-6 h-6 bg-yellow-500 rounded-full border-yellow-600 mr-3 " /> Amarillo
+            <div :class="{selectarea: contactColor == 'teal'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('teal')">
+              <div class=" w-6 h-6 bg-teal-500 rounded-full border-yellow-600 mr-3 " /> Verde
             </div>
             
-            <div :class="{selectarea: contactColor == 'Azul'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Azul')">
+            <div :class="{selectarea: contactColor == 'blue'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('blue')">
               <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-600 mr-3 " /> Azul
             </div>
             
-            <div :class="{selectarea: contactColor == 'Rojo'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Rojo')">
+            <div :class="{selectarea: contactColor == 'red'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('red')">
               <div class=" w-6 h-6 bg-red-500 rounded-full border-red-600 mr-3 " /> Rojo
             </div>
 

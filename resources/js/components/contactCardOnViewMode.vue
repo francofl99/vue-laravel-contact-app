@@ -1,6 +1,6 @@
 <template>
-<div class="card-design">
-    <div class="  bg-gray-800 row-span-1 p-2 text-gray-200 items-center flex">Nombre: {{ contactName }}</div>
+<div class="card-design rounded-md bg-gray-100">
+    <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-200 items-center flex">Nombre: {{ contactName }}</div>
       <div class="p-2 text-gray-800 items-center flex">Apellido: {{ contactLastName }}</div>
       <div class="p-2 text-gray-800 items-start flex" >Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumber }}</div>
 
@@ -31,7 +31,8 @@ export default {
     contactName: String,
     contactLastName: String,
     contactAreaCode: String,
-    contactPhoneNumber: String
+    contactPhoneNumber: String,
+    contactColor: String
   },
 
   components: {

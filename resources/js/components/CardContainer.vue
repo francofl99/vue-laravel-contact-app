@@ -7,6 +7,7 @@
       :contactLastName="contact.apellido"
       :contactAreaCode="contact.codigo_area"
       :contactPhoneNumber="contact.numero"
+      :contactColor="contact.color"
     />
   </div>
 </template>

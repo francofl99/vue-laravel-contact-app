@@ -8,6 +8,7 @@
       :contactLastName="contactLastName"
       :contactAreaCode="contactAreaCode"
       :contactPhoneNumber="contactPhoneNumber"
+      :contactColor="contactColor"
 
       @edit-button-clicked="cardOnViewMode = false"
     />
@@ -20,6 +21,7 @@
       :contactLastName="contactLastName"
       :contactAreaCode="contactAreaCode"
       :contactPhoneNumber="contactPhoneNumber"
+      :contactColor="contactColor"
 
       @contact-updated="cardOnViewMode = true"/>
   </div>
@@ -39,7 +41,8 @@ export default {
     contactName: String,
     contactLastName: String,
     contactAreaCode: String,
-    contactPhoneNumber: String
+    contactPhoneNumber: String,
+    contactColor: String
   },
 
   data () {
@@ -62,14 +65,8 @@ export default {
   border-radius: 0.375rem;
 
   --bg-opacity: 1;
-  background-color: #cbd5e0;
-  background-color: rgba(203, 213, 224, var(--bg-opacity));
-
-  --border-opacity: 1;
-  border-color: #2d3748;
-  border-color: rgba(45, 55, 72, var(--border-opacity));
-
-  border-width: 2px;
+    background-color: #f7fafc;
+    background-color: rgba(247, 250, 252, var(--bg-opacity));
 
   display: grid;
 
