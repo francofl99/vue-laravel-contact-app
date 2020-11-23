@@ -112,7 +112,8 @@ export default {
       thisContactName: this.contactName,
       thisContactLastName: this.contactLastName,
       thisContactAreaCode: this.contactAreaCode,
-      thisContactPhoneNumber: this.contactPhoneNumber
+      thisContactPhoneNumber: this.contactPhoneNumber,
+      thisContactColor: this.contactColor
     }
   },
 
@@ -123,7 +124,8 @@ export default {
         nombre: this.thisContactName,
         apellido: this.thisContactLastName,
         codigo_area: this.thisContactAreaCode,
-        numero: this.thisContactPhoneNumber
+        numero: this.thisContactPhoneNumber,
+        color: this.thisContactColor
       })
         .then((resolve) => {
           console.log(resolve.data)
@@ -135,6 +137,10 @@ export default {
       this.$root.$emit('data-base-modificated')
 
       this.$emit('contact-updated')
+    },
+
+    assignColorPickedToContact(color) {
+      this.thisContactColor = color;
     }
   }
 
