@@ -54,8 +54,6 @@
             />
         </form>
 
-        
-
         <AppDropdown>
       <template slot="toggler">
         <div class="w-full mt-4 relative">
@@ -67,22 +65,22 @@
             </div>
       </template>
       <AppDropdownContent>
-        <div class="mt-2 w-64 drop-menu bg-gray-700 rounded-md absolute overflow-auto"> 
-          <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer">
+        <div class="mt-2 w-64 drop-menu bg-gray-700 rounded-md absolute overflow-auto flex items-start"> 
+          <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer items-center">
 
-            <div :class="{selectarea: contactColor == 'gray'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('gray')">
+            <div :class="{selectarea: contactColor == 'gray'}" class=" rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
               <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-600 mr-3 " /> Sin color
             </div>
             
-            <div :class="{selectarea: contactColor == 'teal'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('teal')">
+            <div :class="{selectarea: contactColor == 'teal'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('teal')">
               <div class=" w-6 h-6 bg-teal-500 rounded-full border-yellow-600 mr-3 " /> Verde
             </div>
             
-            <div :class="{selectarea: contactColor == 'blue'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('blue')">
+            <div :class="{selectarea: contactColor == 'blue'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('blue')">
               <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-600 mr-3 " /> Azul
             </div>
             
-            <div :class="{selectarea: contactColor == 'red'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('red')">
+            <div :class="{selectarea: contactColor == 'red'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('red')">
               <div class=" w-6 h-6 bg-red-500 rounded-full border-red-600 mr-3 " /> Rojo
             </div>
 
@@ -90,6 +88,8 @@
         </div>
       </AppDropdownContent>
     </AppDropdown>
+
+        
 
 
     <button class="border-b-4 border-teal-500 font-bold mt-6 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
@@ -109,6 +109,8 @@ import VueHicons from 'vue-hicons'
 import AppDropdown from './AppDropdown'
 import AppDropdownContent from './AppDropdownContent'
 
+
+
 export default {
   name: 'InputContact',
 
@@ -118,7 +120,7 @@ export default {
       contactLastName: '',
       contactAreaNumber: '',
       contactPhoneNumber: '',
-      contactColor: 'Sin color'
+      contactColor: 'gray'
     }
   },
 
@@ -147,8 +149,8 @@ export default {
       this.$root.$emit('data-base-modificated')
     },
 
-    assignColorSelectedToContact (colorSelected) {
-      this.contactColor = colorSelected;
+    assignColorPickedToContact (colorPicked) {
+      this.contactColor = colorPicked;
     }
   }
 
