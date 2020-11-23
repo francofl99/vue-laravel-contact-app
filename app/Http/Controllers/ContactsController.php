@@ -23,7 +23,8 @@ class ContactsController extends Controller
                 'nombre' => $data['nombre'],
                 'apellido' => $data['apellido'],
                 'codigo_area' => $data['codigo_area'],
-                'numero' => $data['numero']
+                'numero' => $data['numero'],
+                'color' => $data['color']
             ]);
         } catch (Exception $e) {
             return $e;

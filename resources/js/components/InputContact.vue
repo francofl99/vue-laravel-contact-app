@@ -68,26 +68,25 @@
       </template>
       <AppDropdownContent>
         <div class="mt-2 w-64 drop-menu bg-gray-700 rounded-md absolute overflow-auto"> 
-          <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer" >
+          <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer">
 
-            <div class="w-full p-2 flex ">
+            <div :class="{selectarea: contactColor == 'Sin color'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Sin color')">
               <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-600 mr-3 " /> Sin color
             </div>
             
-            <div class="w-full p-2 flex">
+            <div :class="{selectarea: contactColor == 'Amarillo'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Amarillo')">
               <div class=" w-6 h-6 bg-yellow-500 rounded-full border-yellow-600 mr-3 " /> Amarillo
             </div>
             
-            <div class="w-full p-2 flex">
+            <div :class="{selectarea: contactColor == 'Azul'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Azul')">
               <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-600 mr-3 " /> Azul
             </div>
             
-            <div class="w-full p-2 flex">
+            <div :class="{selectarea: contactColor == 'Rojo'}" class=" rounded-md w-full p-2 flex" @click="assignColorSelectedToContact('Rojo')">
               <div class=" w-6 h-6 bg-red-500 rounded-full border-red-600 mr-3 " /> Rojo
             </div>
 
           </div>
-
         </div>
       </AppDropdownContent>
     </AppDropdown>
@@ -121,6 +120,7 @@ export default {
       contactLastName: '',
       contactAreaNumber: '',
       contactPhoneNumber: '',
+      contactColor: 'Sin color'
     }
   },
 
@@ -136,7 +136,8 @@ export default {
         nombre: this.contactName,
         apellido: this.contactLastName,
         codigo_area: this.contactAreaNumber,
-        numero: this.contactPhoneNumber
+        numero: this.contactPhoneNumber,
+        color: this.contactColor
       })
         .then((resolve) => {
           console.log(resolve.data)
@@ -147,6 +148,10 @@ export default {
 
       this.$root.$emit('data-base-modificated')
     },
+
+    assignColorSelectedToContact (colorSelected) {
+      this.contactColor = colorSelected;
+    }
   }
 
 }
@@ -159,5 +164,11 @@ export default {
 }
 .drop-menu {
   height: 20%;
+}
+.selectarea {
+ --bg-opacity: 1;
+    background-color: #718096;
+    background-color: rgba(113, 128, 150, var(--bg-opacity));
+
 }
 </style>
