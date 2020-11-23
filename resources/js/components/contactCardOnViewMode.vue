@@ -1,6 +1,6 @@
 <template>
 <div class="card-design">
-    <div class="row-span-1 bg-gray-800 p-2 text-gray-200 items-center flex">Nombre: {{ contactName }}</div>
+    <div class="  bg-gray-800 row-span-1 p-2 text-gray-200 items-center flex">Nombre: {{ contactName }}</div>
       <div class="p-2 text-gray-800 items-center flex">Apellido: {{ contactLastName }}</div>
       <div class="p-2 text-gray-800 items-start flex" >Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumber }}</div>
 

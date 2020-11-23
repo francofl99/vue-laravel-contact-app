@@ -52,24 +52,55 @@
                 placeholder="5 166 293"
                 v-model="contactPhoneNumber"
             />
-
-            <div class="w-full mt-4">
-              <button
-              class="  border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
-            >
-              Color <vue-hicons name="chevron_down" :width-icon="5" is-filled class=" my-auto ml-1"/>
-            </button>
-            </div>
-
         </form>
 
-        <button
+        
+
+        <AppDropdown>
+      <template slot="toggler">
+        <div class="w-full mt-4 relative">
+              <button
+              class="border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
+              >
+              Color <vue-hicons name="arrow_circle_down" :width-icon="5" is-filled class=" my-auto ml-1"/>
+            </button>
+            </div>
+      </template>
+      <AppDropdownContent>
+        <div class="mt-2 w-64 drop-menu bg-gray-700 rounded-md absolute overflow-auto"> 
+          <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer" >
+
+            <div class="w-full p-2 flex ">
+              <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-600 mr-3 " /> Sin color
+            </div>
+            
+            <div class="w-full p-2 flex">
+              <div class=" w-6 h-6 bg-yellow-500 rounded-full border-yellow-600 mr-3 " /> Amarillo
+            </div>
+            
+            <div class="w-full p-2 flex">
+              <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-600 mr-3 " /> Azul
+            </div>
+            
+            <div class="w-full p-2 flex">
+              <div class=" w-6 h-6 bg-red-500 rounded-full border-red-600 mr-3 " /> Rojo
+            </div>
+
+          </div>
+
+        </div>
+      </AppDropdownContent>
+    </AppDropdown>
+
+
+    <button
             class="border-b-4 border-teal-500 font-bold mt-6 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
-            @click="saveContact"
+            
         >
             <vue-hicons name="check_circle" is-filled :width-icon="5" class=" my-auto mr-1"/>
                 Agendar
         </button>
+
     </div>
 
 </template>
@@ -77,6 +108,9 @@
 <script>
 import axios from 'axios'
 import VueHicons from 'vue-hicons'
+
+import AppDropdown from './AppDropdown'
+import AppDropdownContent from './AppDropdownContent'
 
 export default {
   name: 'InputContact',
@@ -86,11 +120,13 @@ export default {
       contactName: '',
       contactLastName: '',
       contactAreaNumber: '',
-      contactPhoneNumber: ''
+      contactPhoneNumber: '',
     }
   },
 
   components: {
+    AppDropdown,
+    AppDropdownContent,
     VueHicons
   },
 
@@ -110,7 +146,7 @@ export default {
         })
 
       this.$root.$emit('data-base-modificated')
-    }
+    },
   }
 
 }
@@ -120,5 +156,8 @@ export default {
 .input-design {
     width: 30%;
     height: 80%;
+}
+.drop-menu {
+  height: 20%;
 }
 </style>
