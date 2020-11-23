@@ -1,7 +1,7 @@
 <template>
 <div class="card-design">
 
-  <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-800 items-center">
+  <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-800 items-center  flex">
     <input
       type="text"
       class="rounded-md h-8 pl-2 w-full"
@@ -57,19 +57,19 @@
           <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer items-center ">
 
             <div :class="{selectarea: contactColor == 'gray'}" class=" rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
-              <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-600 mr-3 " /> Sin color
+              <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-400 border-2 mr-3 " /> Sin color
             </div>
             
             <div :class="{selectarea: contactColor == 'teal'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('teal')">
-              <div class=" w-6 h-6 bg-teal-500 rounded-full border-yellow-600 mr-3 " /> Verde
+              <div class=" w-6 h-6 bg-teal-500 rounded-full border-teal-400 border-2 mr-3 " /> Verde
             </div>
             
             <div :class="{selectarea: contactColor == 'blue'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('blue')">
-              <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-600 mr-3 " /> Azul
+              <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-400 border-2 mr-3 " /> Azul
             </div>
             
             <div :class="{selectarea: contactColor == 'red'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('red')">
-              <div class=" w-6 h-6 bg-red-500 rounded-full border-red-600 mr-3 " /> Rojo
+              <div class=" w-6 h-6 bg-red-500 rounded-full border-red-400 border-2 mr-3 " /> Rojo
             </div>
 
           </div>
