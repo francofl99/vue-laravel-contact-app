@@ -42,9 +42,9 @@
       <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
   </button>
 
-  <AppDropdown>
+  <AppDropdown class="relative" >
       <template slot="toggler">
-        <div class="relative">
+        <div >
               <button
               class=" color-button border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
               >
@@ -52,8 +52,8 @@
             </button>
             </div>
       </template>
-      <AppDropdownContent>
-        <div class="mt-2 w-64 drop-menu-edit-card bg-gray-700 flex rounded-md absolute overflow-auto"> 
+      <AppDropdownContent class="flex absolute right-0 ">
+        <div class="mt-2 w-40 drop-menu-edit-card bg-gray-700 flex rounded-md  overflow-auto"> 
           <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer items-center ">
 
             <div :class="{selectarea: contactColor == 'gray'}" class=" rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
@@ -172,7 +172,7 @@ height: 85%;
 
 }
 .drop-menu-edit-card {
-  height: 30%;
+  height: 500%;
 }
 .selectarea {
  --bg-opacity: 1;
