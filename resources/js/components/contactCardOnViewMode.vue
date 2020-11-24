@@ -55,7 +55,7 @@ export default {
     },
 
     notifyClick () {
-      this.$emit('edit-button-clicked')
+      this.$emit('editButtonClicked')
     }
   }
 }

@@ -136,7 +136,7 @@ export default {
 
       this.$root.$emit('data-base-modificated')
 
-      this.$emit('contact-updated')
+      this.$emit('contactUpdated')
     },
 
     assignColorPickedToContact(color) {

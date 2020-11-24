@@ -10,7 +10,7 @@
       :contactPhoneNumber="contactPhoneNumber"
       :contactColor="contactColor"
 
-      @edit-button-clicked="cardOnViewMode = false"
+      v-on:editButtonClicked="cardOnViewMode = false"
     />
   </div>
 
@@ -23,7 +23,7 @@
       :contactPhoneNumber="contactPhoneNumber"
       :contactColor="contactColor"
 
-      @contact-updated="cardOnViewMode = true"/>
+      v-on:contactUpdated="cardOnViewMode = true"/>
   </div>
 </div>
 
