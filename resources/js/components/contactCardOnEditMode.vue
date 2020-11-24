@@ -56,19 +56,19 @@
         <div class="mt-2 w-40 drop-menu-edit-card bg-gray-700 flex rounded-md  overflow-auto"> 
           <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer items-center ">
 
-            <div :class="{selectarea: contactColor == 'gray'}" class=" rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
+            <div :class="{selectarea: thisContactColor == 'gray'}" class="mb-1 hover:bg-gray-500 rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
               <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-400 border-2 mr-3 " /> Sin color
             </div>
             
-            <div :class="{selectarea: contactColor == 'teal'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('teal')">
+            <div :class="{selectarea: thisContactColor == 'teal'}" class="mb-1 hover:bg-gray-500 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('teal')">
               <div class=" w-6 h-6 bg-teal-500 rounded-full border-teal-400 border-2 mr-3 " /> Verde
             </div>
             
-            <div :class="{selectarea: contactColor == 'blue'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('blue')">
+            <div :class="{selectarea: thisContactColor == 'blue'}" class="mb-1 hover:bg-gray-500 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('blue')">
               <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-400 border-2 mr-3 " /> Azul
             </div>
             
-            <div :class="{selectarea: contactColor == 'red'}" class=" rounded-md w-full p-2 flex" @click="assignColorPickedToContact('red')">
+            <div :class="{selectarea: thisContactColor == 'red'}" class="hover:bg-gray-500 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('red')">
               <div class=" w-6 h-6 bg-red-500 rounded-full border-red-400 border-2 mr-3 " /> Rojo
             </div>
 
