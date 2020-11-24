@@ -5,7 +5,6 @@
     <input
       type="text"
       class="rounded-md h-8 pl-2 w-full"
-      placeholder="Nombre"
       v-model="thisContactName"
     />
   </div>
@@ -14,7 +13,6 @@
     <input
       type="text"
       class=" rounded-md  h-8 pl-2 w-full bg-gray-400"
-      placeholder="Apellido"
       v-model="thisContactLastName"
     />
   </div>
@@ -23,36 +21,33 @@
     <input
       type="number"
       class="rounded-md h-8 w-20 pl-2 bg-gray-400"
-      placeholder="Area"
       v-model="thisContactAreaCode"
     />
     <input
       type="number"
       class="rounded-md h-8 pl-2 w-32 bg-gray-400"
-      placeholder="Numero"
       v-model="thisContactPhoneNumber"
     />
 
   </div>
 
   <div class="w-full flex items-center mb-1">
-<button
-    class="save-button button border-teal-500 hover:border-teal-600 bg-teal-400 text-teal-900 hover:bg-teal-500 flex"
-    @click="updateContact">
-      <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
-  </button>
+    <button
+      class="save-button button border-teal-500 hover:border-teal-600 bg-teal-400 text-teal-900 hover:bg-teal-500 flex"
+      @click="updateContact">
+        <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
+    </button>
 
-  <AppDropdown class="relative" >
+    <AppDropdown class="relative" >
       <template slot="toggler">
         <div >
-              <button
-              class=" color-button border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
-              >
+          <button
+            class=" color-button border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between">
               Color <vue-hicons name="arrow_circle_down" :width-icon="5" is-filled class=" my-auto ml-1"/>
-            </button>
-            </div>
+          </button>
+        </div>
       </template>
-      <AppDropdownContent class="flex absolute right-0 ">
+      <AppDropdownContent class="flex absolute right-0">
         <div class="mt-2 w-40 drop-menu-edit-card bg-gray-700 flex rounded-md  overflow-auto"> 
           <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer items-center ">
 
@@ -76,10 +71,8 @@
         </div>
       </AppDropdownContent>
     </AppDropdown>
-
   </div>
 
-  
 </div>
 </template>
 
@@ -127,15 +120,14 @@ export default {
         numero: this.thisContactPhoneNumber,
         color: this.thisContactColor
       })
-        .then((resolve) => {
-          console.log(resolve.data)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+      .then((resolve) => {
+        console.log(resolve.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
 
       this.$root.$emit('data-base-modificated')
-
       this.$emit('contactUpdated')
     },
 
