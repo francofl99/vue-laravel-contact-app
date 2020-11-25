@@ -38,39 +38,45 @@
         <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
     </button>
 
-    <AppDropdown class="relative" >
+    <AppDropdown class="relative">
       <template slot="toggler">
-        <div >
-          <button
-            class=" color-button border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between">
+        <div class="color-button">
+              <button
+              class="border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
+              >
               Color <vue-hicons name="arrow_circle_down" :width-icon="5" is-filled class=" my-auto ml-1"/>
-          </button>
-        </div>
+            </button>
+            </div>
       </template>
-      <AppDropdownContent class="flex absolute right-0">
-        <div class="mt-2 w-40 drop-menu-edit-card bg-gray-700 flex rounded-md  overflow-auto"> 
-          <div class="flex flex-wrap p-2 text-gray-200 cursor-pointer items-center ">
+      <AppDropdownContent class="absolute right-0">
+        <div class="mt-2 w-32 drop-menu-edit-card  bg-white text-gray-800 rounded-md overflow-auto flex items-start shadow-lg " > 
+          <div class="flex flex-wrap p-2 cursor-pointer items-center">
 
-            <div :class="{selectarea: thisContactColor == 'gray'}" class="mb-1 hover:bg-gray-500 rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
-              <div class=" w-6 h-6 bg-gray-500 rounded-full border-gray-400 border-2 mr-3 " /> Sin color
+            <div :class="{selectarea: isContactColor('gray'), notselectarea: !isContactColor('gray')}" class=" mb-1 hover:bg-gray-300 rounded-md w-full p-2 flex" @click=" assignColorPickedToContact('gray') ">
+              <div class=" w-6 h-6 bg-gray-800 rounded-full border-gray-700 border-2 mr-3 " /> Gris
             </div>
             
-            <div :class="{selectarea: thisContactColor == 'teal'}" class="mb-1 hover:bg-gray-500 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('teal')">
+            <div :class="{selectarea: isContactColor('teal'), notselectarea: !isContactColor('teal')}" class="mb-1 hover:bg-gray-300 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('teal')">
               <div class=" w-6 h-6 bg-teal-500 rounded-full border-teal-400 border-2 mr-3 " /> Verde
             </div>
             
-            <div :class="{selectarea: thisContactColor == 'blue'}" class="mb-1 hover:bg-gray-500 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('blue')">
+            <div :class="{selectarea: isContactColor('blue'), notselectarea: !isContactColor('blue')}" class="mb-1 hover:bg-gray-300 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('blue')">
               <div class=" w-6 h-6 bg-blue-500 rounded-full border-blue-400 border-2 mr-3 " /> Azul
             </div>
             
-            <div :class="{selectarea: thisContactColor == 'red'}" class="hover:bg-gray-500 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('red')">
-              <div class=" w-6 h-6 bg-red-500 rounded-full border-red-400 border-2 mr-3 " /> Rojo
+            <div :class="{selectarea: isContactColor('red'), notselectarea: !isContactColor('red')}" class="hover:bg-gray-300 rounded-md w-full p-2 flex" @click="assignColorPickedToContact('red')">
+              <div class=" w-6 h-6 bg-red-500 rounded-full border-2 border-red-400 mr-3 " /> Rojo
             </div>
 
           </div>
         </div>
       </AppDropdownContent>
     </AppDropdown>
+
+    
+
+
+    
   </div>
 
 </div>
@@ -133,6 +139,10 @@ export default {
 
     assignColorPickedToContact(color) {
       this.thisContactColor = color;
+    },
+
+    isContactColor(color) {
+      return this.thisContactColor == color;
     }
   }
 
@@ -168,8 +178,8 @@ height: 85%;
 }
 .selectarea {
  --bg-opacity: 1;
-    background-color: #718096;
-    background-color: rgba(113, 128, 150, var(--bg-opacity));
+    background-color: #cbd5e0;
+    background-color: rgba(203, 213, 224, var(--bg-opacity));
 
 }
 </style>
