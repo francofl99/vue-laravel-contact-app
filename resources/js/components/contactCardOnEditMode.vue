@@ -1,5 +1,5 @@
 <template>
-<div class="card-design">
+<div class="card-design ">
 
   <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-800 items-center  flex">
     <input
@@ -31,18 +31,18 @@
 
   </div>
 
-  <div class="w-full flex items-center mb-1">
+  <div class="w-full flex items-center mb-1 justify-between px-2">
     <button
-      class="save-button button border-teal-500 hover:border-teal-600 bg-teal-400 text-teal-900 hover:bg-teal-500 flex"
+      class="place-content-center place-items-center save-button button border-teal-500 hover:border-teal-600 bg-teal-400 text-teal-900 hover:bg-teal-500 flex"
       @click="updateContact">
-        <vue-hicons name="check_circle" class="mx-auto" :width-icon="5" is-filled/>Guardar
+        <vue-hicons name="check_circle" class="mr-2" :width-icon="5" is-filled/>Guardar
     </button>
 
-    <AppDropdown class="relative">
+    <AppDropdown class="relative color-button">
       <template slot="toggler">
-        <div class="color-button">
+        <div class="h-full">
               <button
-              class="border-b-4 border-gray-800 font-bold  hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200 border-transparent hover:bg-gray-800 transition duration-150 flex justify-between"
+              class="h-full border-b-4 border-gray-800 font-bold items-center hover:border-gray-900 bg-gray-700 rounded-md p-2 text-gray-200  hover:bg-gray-800 transition duration-150 flex justify-between"
               >
               Color <vue-hicons name="arrow_circle_down" :width-icon="5" is-filled class=" my-auto ml-1"/>
             </button>
@@ -160,17 +160,14 @@ export default {
 
   font-weight: 700;
 
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-
   padding-right: 0.5rem;
 
-  justify-content: space-between;
 }
 
 .color-button {
 
 height: 85%;
+
 
 }
 .drop-menu-edit-card {

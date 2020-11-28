@@ -1,6 +1,6 @@
 <template>
-  <div class="cards-view p-4 gap-4 grid grid-cols-3 items-start place-items-center overflow-y-scroll bg-gray-400 rounded-md">
-    <contact-card v-for="contact in contacts"
+  <div class="h-full w-2/3 p-4 gap-4 auto-rows-min grid grid-cols-3 overflow-y-scroll bg-gray-400 rounded-md">
+    <contact-card v-for="contact in contacts" 
       :key="contact.id"
       :contactId="contact.id"
       :contactName="contact.nombre"
@@ -54,8 +54,5 @@ export default {
 </script>
 
 <style>
-.cards-view {
-    width: 58%;
-    height: 100%;
-}
+
 </style>

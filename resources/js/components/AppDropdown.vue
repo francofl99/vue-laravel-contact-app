@@ -1,14 +1,10 @@
 <template>
-
-    
     <div @click="toggle" v-on-clickaway="away">
-    <slot name="toggler">
+    <slot name="toggler" >
       <button>Toggle</button>
     </slot>
     <slot/>
   </div>
-
-
 </template>
 
 <script>

@@ -1,8 +1,8 @@
 <template>
 
-    <div class="bg-gray-400 rounded-md input-design mx-16 p-4 self-center">
+    <div class="bg-gray-400 rounded-md input-design mx-16 p-4 self-center flex flex-wrap">
 
-        <form class="flex-wrap flex">
+        <form class="flex-wrap flex w-full">
             <label
                 for="nombre"
                 class="text-gray-800">
@@ -54,7 +54,7 @@
             />
         </form>
 
-      <AppDropdown>
+      <AppDropdown class="w-full">
       <template slot="toggler">
         <div class="w-full mt-4 relative">
               <button
@@ -89,7 +89,7 @@
       </AppDropdownContent>
     </AppDropdown>
 
-    <button class="border-b-4 border-teal-500 font-bold mt-6 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
+    <button class=" self-end h-12 border-b-4 border-teal-500 font-bold mt-6 hover:border-teal-600 bg-teal-400 rounded-md p-2 text-teal-900 border-transparent hover:bg-teal-500 transition duration-150 flex justify-between"
       @click="saveContact"  >
             <vue-hicons name="check_circle" is-filled :width-icon="5" class=" my-auto mr-1"/>
                 Agendar
