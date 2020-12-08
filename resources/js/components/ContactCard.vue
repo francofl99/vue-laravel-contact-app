@@ -1,7 +1,7 @@
 <template>
 
-<div>
- <div v-if="cardOnViewMode">
+<div >
+ <div v-if="cardOnViewMode" >
     <contact-card-on-view-mode
       :contactId="contactId"
       :contactName="contactName"
@@ -59,11 +59,10 @@ export default {
 </script>
 
 <style>
-.card-design {
+.contact-card-design {
 
-   height: 16rem;
-
-   width: 100%;
+  height: 16rem;
+  width: 100%;
 
   border-radius: 0.375rem;
 

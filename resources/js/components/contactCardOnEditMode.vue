@@ -1,5 +1,5 @@
 <template>
-<div class="card-design ">
+<div class="contact-card-design">
 
   <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-800 items-center  flex">
     <input
