@@ -82,4 +82,16 @@ export default {
   border-bottom-width: 4px;
   border-radius: 0.375rem;
 }
+
+.card-header {
+  @apply  rounded-t-md row-span-1 p-2  items-center flex;
+}
+
+.card-body-item {
+  @apply p-2 text-gray-800 flex;
+}
+
+.button-section {
+  @apply px-2 flex justify-items-start;
+}
 </style>

@@ -1,22 +1,26 @@
 <template>
-<div class="contact-card-design">
-    <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-200 items-center flex">Nombre: {{ contactName }}</div>
-      <div class="p-2 text-gray-800 items-center flex">Apellido: {{ contactLastName }}</div>
-      <div class="p-2 text-gray-800 items-start flex" >Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumber }}</div>
-
-        <div class="px-2 flex justify-items-start">
-            <button
-                @click="notifyClick"
-                class="mr-2 button view-button border-blue-500 hover:border-blue-600 bg-blue-400 text-blue-900 hover:bg-blue-500"
-            >
-                <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
-            </button>
-            <button class="button view-button border-red-500 hover:border-red-600 bg-red-400 text-red-900 hover:bg-red-500" @click="removeContact">
-                <vue-hicons class="mx-auto" :width-icon="5" name="trash" is-filled/>
-            </button>
-        </div>
-
-</div>
+  <div class="contact-card-design">
+    <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500'" class="card-header text-gray-200">
+      Nombre: {{ contactName }}
+    </div>
+    <div class="card-body-item items-center">
+      Apellido: {{ contactLastName }}
+    </div>
+    <div class="card-body-item items-start">
+      Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumber }}
+    </div>
+    <div class="button-section">
+      <button
+        @click="notifyClick"
+        class="button edit-button"
+      >
+        <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
+      </button>
+      <button class="button delete-button" @click="removeContact">
+        <vue-hicons class="mx-auto" :width-icon="5" name="trash" is-filled/>
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -67,5 +71,21 @@ export default {
   width: 28%;
 
   padding: 0.5rem;
+}
+
+.edit-button {
+  @apply .view-button border-blue-500 bg-blue-400 text-blue-900 mr-2;
+}
+
+.edit-button:hover {
+  @apply border-blue-600 bg-blue-500;
+}
+
+.delete-button {
+  @apply .view-button  border-red-500 bg-red-400 text-red-900;
+}
+
+.delete-button:hover {
+  @apply border-red-600 bg-red-500;
 }
 </style>

@@ -1,6 +1,5 @@
 <template>
-  
-    <draggable  filter=".button" ghost-class="moving-card" :animation="200" :list="contacts" class="h-full w-2/3 p-4 gap-4 auto-rows-min grid grid-cols-3 overflow-y-scroll bg-gray-400 rounded-md">
+  <draggable  filter=".button" ghost-class="moving-card" :animation="200" :list="contacts" class="card-container">
     <contact-card v-for="contact in contacts"
       :key="contact.id"
       :contactId="contact.id"
@@ -10,8 +9,7 @@
       :contactPhoneNumber="contact.numero"
       :contactColor="contact.color"
     />
-    </draggable>
-  
+   </draggable>
 </template>
 
 <script>
@@ -60,5 +58,9 @@ export default {
 <style >
  .moving-card {
     @apply rounded-md opacity-50 bg-gray-100;
+  }
+
+  .card-container {
+    @apply h-full w-2/3 p-4 gap-4 auto-rows-min grid grid-cols-3 overflow-y-scroll bg-gray-400 rounded-md;
   }
 </style>

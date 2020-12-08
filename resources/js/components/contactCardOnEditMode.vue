@@ -1,7 +1,7 @@
 <template>
 <div class="contact-card-design">
 
-  <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500' " class=" rounded-t-md row-span-1 p-2 text-gray-800 items-center  flex">
+  <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500'" class="card-header text-gray-800">
     <input
       type="text"
       class="rounded-md h-8 pl-2 w-full"
