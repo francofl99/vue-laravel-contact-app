@@ -20,6 +20,7 @@ class CreateContactTable extends Migration
             $table->string('codigo_area');
             $table->string('numero');
             $table->string('color');
+            $table->integer('orden');
         });
     }
 

@@ -5,7 +5,7 @@
     <input
       type="text"
       class="rounded-md h-8 pl-2 w-full"
-      v-model="thisContactName"
+      v-model="contactName"
     />
   </div>
 
@@ -13,7 +13,7 @@
     <input
       type="text"
       class=" rounded-md  h-8 pl-2 w-full bg-gray-400"
-      v-model="thisContactLastName"
+      v-model="contactLastName"
     />
   </div>
 
@@ -21,12 +21,12 @@
     <input
       type="number"
       class="rounded-md h-8 w-20 pl-2 bg-gray-400"
-      v-model="thisContactAreaCode"
+      v-model="contactAreaCode"
     />
     <input
       type="number"
       class="rounded-md h-8 pl-2 w-32 bg-gray-400"
-      v-model="thisContactPhoneNumber"
+      v-model="contactPhoneNumber"
     />
 
   </div>
@@ -72,11 +72,6 @@
         </div>
       </AppDropdownContent>
     </AppDropdown>
-
-    
-
-
-    
   </div>
 
 </div>
@@ -98,51 +93,43 @@ export default {
   },
 
   props: {
-    contactId: Number,
-    contactName: String,
-    contactLastName: String,
-    contactAreaCode: String,
-    contactPhoneNumber: String,
-    contactColor: String
+    contact: Object
   },
 
-  data () {
+  data() {
     return {
-      thisContactName: this.contactName,
-      thisContactLastName: this.contactLastName,
-      thisContactAreaCode: this.contactAreaCode,
-      thisContactPhoneNumber: this.contactPhoneNumber,
-      thisContactColor: this.contactColor
+      contactId: this.contact.id,
+      contactName: this.contact.nombre,
+      contactLastName: this.contact.apellido,
+      contactAreaCode: this.contact.codigo_area,
+      contactPhoneNumber: this.contact.numero,
+      contactColor: this.contact.color,
     }
   },
 
   methods: {
     updateContact () {
-      axios.post('/updateContact', {
+      let contactToUpdate = {
+        nuevoId: this.contactId,
         id: this.contactId,
-        nombre: this.thisContactName,
-        apellido: this.thisContactLastName,
-        codigo_area: this.thisContactAreaCode,
-        numero: this.thisContactPhoneNumber,
-        color: this.thisContactColor
-      })
-      .then((resolve) => {
-        console.log(resolve.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+        nombre: this.contactName,
+        apellido: this.contactLastName,
+        codigo_area: this.contactAreaCode,
+        numero: this.contactPhoneNumber,
+        color: this.contactColor
+      }
 
-      this.$root.$emit('data-base-modificated')
+      this.$store.dispatch('updateContact', contactToUpdate)
+      
       this.$emit('contactUpdated')
     },
 
     assignColorPickedToContact(color) {
-      this.thisContactColor = color;
+      this.contactColor = color;
     },
 
     isContactColor(color) {
-      return this.thisContactColor == color;
+      return this.cntactColor == color;
     }
   }
 

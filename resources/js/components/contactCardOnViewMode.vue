@@ -1,13 +1,13 @@
 <template>
   <div class="contact-card-design">
-    <div :class="contactColor == 'gray' ? 'bg-' + contactColor + '-800' : 'bg-' + contactColor + '-500'" class="card-header text-gray-200">
-      Nombre: {{ contactName }}
+    <div :class="contact.color == 'gray' ? 'bg-' + contact.color + '-800' : 'bg-' + contact.color + '-500'" class="card-header text-gray-200">
+      Nombre: {{ contact.nombre }} 
     </div>
     <div class="card-body-item items-center">
-      Apellido: {{ contactLastName }}
+      Apellido: {{ contact.apellido }} 
     </div>
     <div class="card-body-item items-start">
-      Numero: ({{ contactAreaCode }}) - {{ contactPhoneNumber }}
+      Numero: ({{ contact.codigo_area }}) - {{ contact.numero }}
     </div>
     <div class="button-section">
       <button
@@ -31,12 +31,7 @@ export default {
   name: 'contactCardOnViewMode',
 
   props: {
-    contactId: Number,
-    contactName: String,
-    contactLastName: String,
-    contactAreaCode: String,
-    contactPhoneNumber: String,
-    contactColor: String
+    contact: Object
   },
 
   components: {
@@ -45,28 +40,18 @@ export default {
 
   methods: {
     removeContact () {
-      axios.post('/deleteContact', {
-        id: this.contactId
-      })
-        .then((response) => {
-          console.log('contact' + this.contactId + 'removed')
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-
-      this.$root.$emit('data-base-modificated')
+      this.$store.dispatch('removeContact', this.contact)
     },
 
     notifyClick () {
       this.$emit('editButtonClicked')
     }
-  }
+  },
 }
 </script>
 
 <style>
-.view-button {
+.view-button { 
   height: 85%;
   width: 28%;
 

@@ -100,13 +100,10 @@
 </template>
 
 <script>
-import axios from 'axios'
 import VueHicons from 'vue-hicons'
 
 import AppDropdown from './AppDropdown'
 import AppDropdownContent from './AppDropdownContent'
-
-
 
 export default {
   name: 'InputContact',
@@ -129,21 +126,15 @@ export default {
 
   methods: {
     saveContact () {
-      axios.post('/saveContact', {
+      let contactToInsert = {
         nombre: this.contactName,
         apellido: this.contactLastName,
         codigo_area: this.contactAreaNumber,
         numero: this.contactPhoneNumber,
         color: this.contactColor
-      })
-        .then((resolve) => {
-          console.log(resolve.data)
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+      }
 
-      this.$root.$emit('data-base-modificated')
+      this.$store.dispatch('insertContact', contactToInsert)
     },
 
     assignColorPickedToContact (colorPicked) {

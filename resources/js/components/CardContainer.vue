@@ -1,61 +1,49 @@
 <template>
-  <draggable  filter=".button" ghost-class="moving-card" :animation="200" :list="contacts" class="card-container">
-    <contact-card v-for="contact in contacts"
-      :key="contact.id"
-      :contactId="contact.id"
-      :contactName="contact.nombre"
-      :contactLastName="contact.apellido"
-      :contactAreaCode="contact.codigo_area"
-      :contactPhoneNumber="contact.numero"
-      :contactColor="contact.color"
-    />
+  <draggable filter=".button" ghost-class="moving-card" :animation="200" v-model="contacts" class="card-container">
+    <contact-card  v-for="contact in contacts" :key="contact.id"
+      :contact="contact"
+    />    
    </draggable>
 </template>
 
 <script>
 import ContactCard from './ContactCard.vue'
-import axios from 'axios'
 import Draggable from 'vuedraggable'
 
 export default {
   name: 'CardContainer',
-
-  data () {
-    return {
-      contacts: []
-    }
-  },
 
   components: {
     ContactCard,
     Draggable
   },
 
+  computed: {
+    contacts: {
+      get() {
+        return this.$store.getters.contactsGetter
+      },
+      set(newContactList) {
+        this.$store.dispatch('updateContactListAfterMove', newContactList)
+      }
+    } 
+      
+  },
+
   methods: {
-    getContacts () {
-      axios.get('/api/getContacts')
-        .then((response) => {
-          this.contacts = response.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
-    }
+    getContacts() {
+      this.$store.dispatch('getAllContacts');
+    },
+    
   },
 
-  created () {
-    this.getContacts()
-  },
-
-  mounted () {
-    this.$root.$on('data-base-modificated', (data) => {
-      this.getContacts()
-    })
+  created() {
+    this.getContacts();
   }
 }
 </script>
 
-<style >
+<style>
  .moving-card {
     @apply rounded-md opacity-50 bg-gray-100;
   }

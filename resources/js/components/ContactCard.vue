@@ -1,14 +1,8 @@
 <template>
-
 <div >
  <div v-if="cardOnViewMode" >
     <contact-card-on-view-mode
-      :contactId="contactId"
-      :contactName="contactName"
-      :contactLastName="contactLastName"
-      :contactAreaCode="contactAreaCode"
-      :contactPhoneNumber="contactPhoneNumber"
-      :contactColor="contactColor"
+      :contact="contact"
 
       v-on:editButtonClicked="cardOnViewMode = false"
     />
@@ -16,17 +10,11 @@
 
   <div v-else >
     <contact-card-on-edit-mode
-      :contactId="contactId"
-      :contactName="contactName"
-      :contactLastName="contactLastName"
-      :contactAreaCode="contactAreaCode"
-      :contactPhoneNumber="contactPhoneNumber"
-      :contactColor="contactColor"
+      :contact="contact"
 
       v-on:contactUpdated="cardOnViewMode = true"/>
   </div>
 </div>
-
 </template>
 
 <script>
@@ -37,12 +25,10 @@ export default {
   name: 'ContactCard',
 
   props: {
-    contactId: Number,
-    contactName: String,
-    contactLastName: String,
-    contactAreaCode: String,
-    contactPhoneNumber: String,
-    contactColor: String
+    contact: {
+      type: Object,
+      required: true
+    }
   },
 
   data () {

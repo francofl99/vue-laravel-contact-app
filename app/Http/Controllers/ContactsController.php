@@ -11,7 +11,7 @@ class ContactsController extends Controller
 {
     public function getContacts() {
         try {
-            return DB::table('contacts')->get();
+            return DB::table('contacts')->orderBy('orden', 'asc')->get();
         } catch (Exception $e) {
             return $e;
         }
@@ -34,6 +34,7 @@ class ContactsController extends Controller
     public function updateContact(Request $data) {
         try {
             DB::table('contacts')->where('id', $data['id'])->update([
+                'id' => $data['nuevoId'],
                 'nombre' => $data['nombre'],
                 'apellido' => $data['apellido'],
                 'codigo_area' => $data['codigo_area'],
@@ -51,5 +52,11 @@ class ContactsController extends Controller
         } catch (Exception $e) {
             return $e;
         }
+    }
+
+    public function assignOrderToContact(Request $data) {        
+        DB::table('contacts')->where('id', $data['contactId'])->update([
+            'orden' => $data['currentContextIndexOnArray']
+        ]);
     }
 }
