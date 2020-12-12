@@ -76,8 +76,4 @@ export default {
 .card-body-item {
   @apply p-2 text-gray-800 flex;
 }
-
-.button-section {
-  @apply px-2 flex justify-items-start;
-}
 </style>

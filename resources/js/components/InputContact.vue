@@ -52,27 +52,15 @@
             />
         </form>
 
-        <div class="mt-1 flex flex-wrap">
-          <div class="w-full">
-            <drop-down-color-button 
-            class="w-1/2 "
-            :contactColor="contactColor" 
-            v-on:colorPicked="assignColorPickedToContact" 
-      />
-          </div>
-          
-      <div class="save-button">  
-        <save-button @click.native="insertContact"/>
-      </div>  
+        <div class="flex  w-full h-auto items-center">
+              <custom-button :name="'color-dropdown-button'" :color="contactColor" v-on:colorPicked="assignColorPickedToContact" />
         </div>
-
-      
+        <custom-button class="save-button" :name="'save-button'" @click.native="insertContact"/>
     </div>
 </template>
 
 <script>
-import DropDownColorButton from './DropDownColorButton'
-import SaveButton from './SaveButton'
+import CustomButton from './CustomButton'
 
 export default {
   name: 'InputContact',
@@ -88,8 +76,7 @@ export default {
   },
 
   components: {
-    DropDownColorButton,
-    SaveButton
+    CustomButton
   },
 
   methods: {
@@ -119,7 +106,7 @@ export default {
 
 .input-size {
     width: 30%;
-    height: 80%;
+    height: 85%;
 }
 
 .input-area {
@@ -135,6 +122,6 @@ export default {
 }
 
 .save-button {
-  @apply self-end;
+  @apply place-self-start self-end;
 }
 </style>

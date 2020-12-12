@@ -3,7 +3,7 @@
     <color-button slot="toggler"/>
       <AppDropdownContent>
         <color-button-menu 
-            :contactColor="contactColor"
+            :color="color"
             v-on:assignColorAs="notifyColorPicked" />
       </AppDropdownContent>
     </AppDropdown>
@@ -27,7 +27,7 @@ export default {
   },
 
   props: {
-    contactColor: String
+    color: String
   },
 
   methods: {

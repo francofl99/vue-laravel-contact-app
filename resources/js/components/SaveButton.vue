@@ -1,8 +1,13 @@
 <template>
-    <button class="save-button-style" >
-        <vue-hicons name="check_circle" is-filled :width-icon="5" class="save-button-icon"/>
-        Guardar
-    </button>
+<button class="save-button-style">
+    <vue-hicons 
+        name="check_circle" 
+        is-filled 
+        :width-icon="5" 
+        class="save-button-icon"
+    />
+    Guardar
+</button>
 </template>
 
 <script>

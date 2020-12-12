@@ -32,12 +32,9 @@
 
   <div class="button-section">
     <div>  
-      <save-button class="save-button" @click.native="updateContact"/>
+      <custom-button :name="'save-button'" @click.native="updateContact"/>
     </div>
-    <drop-down-color-button 
-       :contactColor="contactColor"
-        v-on:colorPicked="assignColorPickedToContact"
-    />
+    <custom-button :name="'color-dropdown-button'" :color="contactColor" v-on:colorPicked="assignColorPickedToContact" />
   </div>
 
 </div>
@@ -46,15 +43,13 @@
 <script>
 import axios from 'axios'
 
-import DropDownColorButton from './DropDownColorButton'
-import SaveButton from './SaveButton'
+import CustomButton from './CustomButton'
 
 export default {
   name: 'contactCardOnEditMode',
 
   components: {
-    DropDownColorButton,
-    SaveButton
+    CustomButton,
   },
 
   props: {

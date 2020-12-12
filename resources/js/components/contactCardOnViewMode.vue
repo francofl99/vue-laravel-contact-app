@@ -10,22 +10,22 @@
       Numero: ({{ contact.codigo_area }}) - {{ contact.numero }}
     </div>
     <div class="button-section">
-      <button
-        @click="notifyClick"
-        class="button edit-button"
-      >
-        <vue-hicons class="mx-auto" name="pencil_alt" is-filled :width-icon="5"/>
-      </button>
-      <button class="button delete-button" @click="removeContact">
-        <vue-hicons class="mx-auto" :width-icon="5" name="trash" is-filled/>
-      </button>
+      <custom-button 
+        class="button" 
+        :label="false" 
+        :name=" 'edit-button' " 
+        @click.native="notifyClick" />
+      <custom-button 
+        class="button" 
+        :label="false"  
+        :name=" 'remove-button' " 
+        @click.native="removeContact" />
     </div>
   </div>
 </template>
 
 <script>
-import VueHicons from 'vue-hicons'
-import axios from 'axios'
+import CustomButton from './CustomButton.vue'
 
 export default {
   name: 'contactCardOnViewMode',
@@ -35,7 +35,7 @@ export default {
   },
 
   components: {
-    VueHicons
+    CustomButton
   },
 
   methods: {
@@ -50,27 +50,12 @@ export default {
 }
 </script>
 
-<style>
-.view-button { 
-  height: 85%;
-  width: 28%;
-
-  padding: 0.5rem;
+<style scoped>
+.button-section {
+  @apply p-2 flex justify-items-start;
 }
 
-.edit-button {
-  @apply .view-button border-blue-500 bg-blue-400 text-blue-900 mr-2;
-}
-
-.edit-button:hover {
-  @apply border-blue-600 bg-blue-500;
-}
-
-.delete-button {
-  @apply .view-button  border-red-500 bg-red-400 text-red-900;
-}
-
-.delete-button:hover {
-  @apply border-red-600 bg-red-500;
+.button {
+  @apply w-1/3 mr-2;
 }
 </style>

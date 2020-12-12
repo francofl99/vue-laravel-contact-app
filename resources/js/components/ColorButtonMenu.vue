@@ -1,19 +1,19 @@
 <template>
     <div class="menu-container" > 
         <div class="menu-body">
-            <div :class="{selected: isContactColor('gray'), notSelected: !isContactColor('gray')}" class="menu-body-item" @click="assignColorAs('gray') ">
+            <div :class="{selected: isColor('gray'), notSelected: !isColor('gray')}" class="menu-body-item" @click="assignColorAs('gray') ">
               <div class="menu-body-item-icon bg-gray-800  border-gray-700" /> Gris
             </div>
             
-            <div :class="{selected: isContactColor('teal'), notSelected: !isContactColor('teal')}" class="menu-body-item" @click="assignColorAs('teal')">
+            <div :class="{selected: isColor('teal'), notSelected: !isColor('teal')}" class="menu-body-item" @click="assignColorAs('teal')">
               <div class="menu-body-item-icon bg-teal-500 border-teal-400" /> Verde
             </div>
             
-            <div :class="{selected: isContactColor('blue'), notSelected: !isContactColor('blue')}" class="menu-body-item" @click="assignColorAs('blue')">
+            <div :class="{selected: isColor('blue'), notSelected: !isColor('blue')}" class="menu-body-item" @click="assignColorAs('blue')">
               <div class="menu-body-item-icon bg-blue-500 border-blue-400" /> Azul
             </div>
             
-            <div :class="{selected: isContactColor('red'), notSelected: !isContactColor('red')}" class="menu-body-item" @click="assignColorAs('red')">
+            <div :class="{selected: isColor('red'), notSelected: !isColor('red')}" class="menu-body-item" @click="assignColorAs('red')">
               <div class="menu-body-item-icon bg-red-500 border-red-400" /> Rojo
             </div>
 
@@ -26,12 +26,12 @@ export default {
   name: 'ColorButtonMenu',
 
   props: {
-    contactColor: String
+    color: String
   },
 
   methods: {
-    isContactColor(color) {
-      return this.contactColor == color;
+    isColor(color) {
+      return this.color == color;
     },
 
     assignColorAs(colorPicked) {
